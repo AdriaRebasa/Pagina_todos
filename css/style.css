@@ -12,7 +12,7 @@ body {
 }
 
 .sidebar {
-    width: 220px;
+    width: 270px;
     background-color: #2f7df6;
     padding: 20px;
     color: white;
@@ -25,11 +25,24 @@ body {
 }
 
 .sidebar a {
-    display: block;
+    display: flex;
+    align-items: center;
     color: white;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 16px;
+    height: 35px;
+    border-radius: 3px;
+    padding-left: 15px;
+}
+
+.sidebar a:hover {
+    background-color: #296acc;
+}
+
+.sidebar a:active {
+    background-color: #296acc;
+    color: black;
 }
 
 .seccio{
@@ -39,7 +52,10 @@ body {
 
 .contengut {
     flex-grow: 1;
-    padding: 50px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0%;
 }
 
 .contengut h1 {
@@ -62,7 +78,9 @@ body {
     font-weight: bold;
 }
 
-.form-box input[type="text"]{
+.form-box input[type="text"],
+.form-box input[type="date"],
+.form-box select{
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;

@@ -22,7 +22,6 @@ botoAfegir.addEventListener('click', () => {
         return;
     }
 
-    // Comprovar si ja existeix una categoria amb aquest nom
     if (categories.some(cat => cat.nom.toLowerCase() === nom.toLowerCase())) {
         alert('Aquesta categoria ja existeix!');
         return;
