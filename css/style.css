@@ -38,11 +38,15 @@ body {
 
 .sidebar a:hover {
     background-color: #296acc;
+    height: 40px;
+    width: 105%;
+    transition: all 0.4s ease;
 }
 
-.sidebar a:active {
+.sidebar a.active {
     background-color: #296acc;
-    color: black;
+    border: 2px solid #799acc;
+    color: #0d3269;
 }
 
 .seccio{
