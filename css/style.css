@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #2f7df6;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar h3 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.seccio{
+    flex-grow: 1;
+    padding: 50px;
+}
+
+.contengut {
+    flex-grow: 1;
+    padding: 50px;
+}
+
+.contengut h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.form-box {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-box label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-box input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-box input[type="color"] {
+    width: 20%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 35px;
+}
+
+.form-box button {
+    background-color: #2f7df6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.form-box button:hover {
+    background-color: #2262c6;
+}
+
+.categoriaBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.infoDiv{
+    display: flex;
+    align-items: center;
+}
+
+.cercleColor{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #555;
+    background-color: #fff;
+}
+
+.spanSize{
+    font-size: 14px;
+}
+
+.botoEliminar{
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+
+}

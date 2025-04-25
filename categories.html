@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina TODO</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <h3>Menú</h3>
+        <a href="/index.html">Llistat d’Activitats</a>
+        <a href="/crear-tasca.html">Crear Tasca</a>
+        <a href="/categories.html">Gestió de Categories</a>
+    </nav>
+    
+    <section class="seccio">
+        <article class="contengut">
+            <h1>Gestió de Categories</h1>
+            <form class="form-box">
+                <label for="categoria">Nova Categoria:</label>
+                <input type="text" id="categoria" name="categoria">
+
+                <label for="color">Color de la Categoria:</label>
+                <input type="color" id="color" name="color" value="#000000">
+
+                <button>Afegir Categoria</button>
+            </form>
+        </article>
+        <article class="contengut">
+            <ul id="categories">
+                
+            </ul>
+        </article>
+    </section>
+
+</body>
+<script src="/js/categories.js"></script>
+
+</html>
