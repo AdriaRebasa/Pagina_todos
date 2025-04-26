@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina TODO</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <nav class="sidebar">
         <h3>Menú</h3>
@@ -15,11 +17,34 @@
     </nav>
 
     <section class="seccio">
-        <article class="contengut">
+        <article class="contengutIndex">
             <h1>Llistat d'Activitats</h1>
+            <div class="capçalera">
+                <a href="crear-tasca.html">
+                    <button class="botoBlau">
+                        Crear Nova Tasca
+                    </button>
+                </a>
+                <form>
+                    <input type="text" placeholder="nom del arxiu" id="nomArxiu" name="nomArxiu">
+                    <button class="botoBlau">
+                        Pujar
+                    </button>
+                </form>
+            </div>
 
+            <h2>Tasques pendents</h2>
+            <div id="tasques-pendents" style="margin-bottom: 40px;">
+                <!-- Aquí es carregaran les tasques pendents amb JS -->
+            </div>
+
+            <h2>Tasques acabades</h2>
+            <div style="width: 80%; margin: 20px auto;">
+                <canvas id="grafica-tasques"></canvas>
+            </div>
         </article>
     </section>
 </body>
 <script src="/js/index.js"></script>
+
 </html>
