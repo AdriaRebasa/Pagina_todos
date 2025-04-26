@@ -7,8 +7,12 @@
 
 body {
     display: flex;
-    height: 100vh;
     background-color: #f5f7fa;
+}
+
+nav{
+    position: relative;
+    min-height: 100%;
 }
 
 .sidebar {
@@ -298,6 +302,6 @@ body {
 }
 
 .divGrafic {
-    width: 80%; 
+    width: 100%; 
     margin: 20px auto;
 }

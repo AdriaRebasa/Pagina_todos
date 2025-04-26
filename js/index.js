@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function activarEventsAcabades() {
-        document.querySelectorAll('.esborrar-acabada').forEach(boto => {
+        document.querySelectorAll('.esborrar').forEach(boto => {
             boto.addEventListener('click', function () {
                 const index = this.getAttribute('data-index');
                 eliminarTascaAcabada(index);
@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Repintar tant les pendents com les acabades
         pintarTasques();
         pintarTasquesAcabades();
+        pintarGraficaTasques();
     }
 
     function eliminarTasca(index) {
@@ -200,8 +201,12 @@ document.addEventListener('DOMContentLoaded', function () {
         tasquesAcabades.splice(index, 1);
         localStorage.setItem('tasques-acabades', JSON.stringify(tasquesAcabades));
         pintarTasquesAcabades();
+        pintarGraficaTasques();
     }
 
     pintarTasques();
+
     pintarTasquesAcabades();
+   
+
 });
