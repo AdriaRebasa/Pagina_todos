@@ -1,10 +1,12 @@
+let tasques = JSON.parse(localStorage.getItem("tasques")) || [];
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const selectCategoria = document.getElementById("categoriaSelect");
 
     selectCategoria.innerHTML = ' ';
 
-    const categoriesGuardades = JSON.parse(localStorage.getItem("categories"));
+    const categoriesGuardades = JSON.parse(localStorage.getItem("categories")) || [];
 
     categoriesGuardades.forEach(cat => {
         if (cat.nom && cat.nom.trim() !== "") {
@@ -15,55 +17,54 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    let tasques = [];
 
-    const avui = new Date().toISOString().split("T")[0];
-    const botoAfegir = document.querySelector('button');
+});
 
-    botoAfegir.addEventListener("click", () => {
+const avui = new Date().toISOString().split("T")[0];
+const botoAfegir = document.querySelector('button');
 
-        const titol = document.getElementById("titol").value.trim();
-        const descripcio = document.getElementById("descripcio").value.trim();
-        const data = document.getElementById("data").value;
-        const categoria = document.getElementById("categoriaSelect").value;
-        const prioritat = document.getElementById("prioritat").value;
+botoAfegir.addEventListener("click", () => {
 
-        if (titol === "") {
-            alert("El títol és obligatori.");
-            return;
-        }
-        if (descripcio === "") {
-            alert("La descripció es obligatòria.");
-            return;
-        }
-        if (data === "" || data < avui) {
-            alert("Has de seleccionar una fecha.");
-            return;
-        }
-        if (!categoria) {
-            alert("Has de seleccionar una categoria.");
-            return;
-        }
-        if (!prioritat) {
-            alert("Has de seleccionar una prioritat.");
-            return;
-        }
+    const titol = document.getElementById("titol").value.trim();
+    const descripcio = document.getElementById("descripcio").value.trim();
+    const data = document.getElementById("data").value;
+    const categoria = document.getElementById("categoriaSelect").value;
+    const prioritat = document.getElementById("prioritat").value;
 
-        const novaTasca = {
-            titol,
-            descripcio,
-            data,
-            categoria,
-            prioritat
-        };
+    if (titol === "") {
+        alert("El títol és obligatori.");
+        return;
+    }
+    if (descripcio === "") {
+        alert("La descripció es obligatòria.");
+        return;
+    }
+    if (data === "" || data < avui) {
+        alert("Has de seleccionar una fecha.");
+        return;
+    }
+    if (!categoria) {
+        alert("Has de seleccionar una categoria.");
+        return;
+    }
+    if (!prioritat) {
+        alert("Has de seleccionar una prioritat.");
+        return;
+    }
 
-        tasques.push(novaTasca);
-        localStorage.setItem("tasques", JSON.stringify(tasques));
+    const novaTasca = {
+        titol,
+        descripcio,
+        data,
+        categoria,
+        prioritat
+    };
 
-        formulari.reset();
+    tasques.push(novaTasca);
+    localStorage.setItem("tasques", JSON.stringify(tasques));
 
-        alert("Tasca creada correctament!");
-    });
+    document.getElementById("formulari-tasca").reset();
+
 });
 
 
