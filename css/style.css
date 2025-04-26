@@ -203,7 +203,7 @@ body {
     height: 35px; 
 }
 
-#tasques-pendents{
+#tasques-pendents, #tasques-acabades{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -239,7 +239,6 @@ body {
     font-size: 12px;
     margin-top: 10px;
     margin-bottom:10px;
-    background-color: rgb(0, 0, 0);
 }
 
 .tasca .data {
@@ -266,22 +265,39 @@ body {
     border-radius: 50%;
 }
 
-.tasca .esborrar {
+.esborrar {
     background-color: transparent;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 }
 
+.tasca.acabada {
+    background-color: #e2e3e5;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 450px;
+    height: 160px;
+}
+
+
 /* Tasques per prioritat */
 .tasca.alta {
-    background-color: #f8d7da; /* Vermell suau */
+    background-color: #f8d7da;
 }
 
 .tasca.mitjana {
-    background-color: #fff3cd; /* Groc suau */
+    background-color: #fff3cd;
 }
 
 .tasca.baixa {
-    background-color: #d4edda; /* Verd suau */
+    background-color: #d4edda;
+}
+
+.divGrafic {
+    width: 80%; 
+    margin: 20px auto;
 }
