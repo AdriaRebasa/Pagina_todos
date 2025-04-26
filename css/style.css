@@ -84,7 +84,8 @@ body {
 
 .form-box input[type="text"],
 .form-box input[type="date"],
-.form-box select{
+.form-box select,
+.form-box textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;

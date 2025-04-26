@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const selectCategoria = document.getElementById("categoriaSelect");
-    const formulari = document.getElementById("formulari-tasca");
 
     selectCategoria.innerHTML = ' ';
 
-    const categoriesGuardades = JSON.parse(localStorage.getItem("categories")) || [];
+    const categoriesGuardades = JSON.parse(localStorage.getItem("categories"));
 
     categoriesGuardades.forEach(cat => {
         if (cat.nom && cat.nom.trim() !== "") {
@@ -15,25 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    formulari.addEventListener("submit", (e) => {
-        e.preventDefault();
+    let tasques = [];
+
+    const avui = new Date().toISOString().split("T")[0];
+    const botoAfegir = document.querySelector('button');
+
+    botoAfegir.addEventListener("click", () => {
 
         const titol = document.getElementById("titol").value.trim();
         const descripcio = document.getElementById("descripcio").value.trim();
         const data = document.getElementById("data").value;
-        const categoria = document.getElementById("categoria").value;
+        const categoria = document.getElementById("categoriaSelect").value;
         const prioritat = document.getElementById("prioritat").value;
 
-        if (!titol) {
+        if (titol === "") {
             alert("El títol és obligatori.");
             return;
         }
-        if (!descripcio) {
+        if (descripcio === "") {
             alert("La descripció es obligatòria.");
             return;
         }
-        if (!data) {
-            alert("La data és obligatòria.");
+        if (data === "" || data < avui) {
+            alert("Has de seleccionar una fecha.");
             return;
         }
         if (!categoria) {
@@ -53,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             prioritat
         };
 
-        const tasques = JSON.parse(localStorage.getItem("tasques")) || [];
         tasques.push(novaTasca);
         localStorage.setItem("tasques", JSON.stringify(tasques));
 
@@ -61,5 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         alert("Tasca creada correctament!");
     });
-
 });
+
+
+
