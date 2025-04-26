@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Recuperar tasques i categories del localStorage
-    let tasques = JSON.parse(localStorage.getItem('tasques'));
-    let categories = JSON.parse(localStorage.getItem('categories'));
+    let tasques = JSON.parse(localStorage.getItem('tasques')) || [];
+    let categories = JSON.parse(localStorage.getItem('categories')) || [];
 
     // Contenidor on es pintaran les tasques
     const container = document.getElementById('tasques-pendents');
