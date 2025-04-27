@@ -200,7 +200,7 @@ nav{
     font-size: 14px;
 }
 
-#nomArxiu{
+#input-nom-arxiu{
     height: 100%;
     margin-right: 10px;
     padding-left: 5px;
@@ -219,7 +219,6 @@ nav{
 }
 
 /*ojo per aqui*/
-
 .tasca {
     padding: 15px;
     margin: 10px 0;
@@ -287,8 +286,6 @@ nav{
     height: 160px;
 }
 
-
-/* Tasques per prioritat */
 .tasca.alta {
     background-color: #f8d7da;
 }
