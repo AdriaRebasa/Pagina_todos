@@ -20,6 +20,7 @@ nav{
     background-color: #2f7df6;
     padding: 20px;
     color: white;
+    min-height: 100%;
 }
 
 .sidebar h3 {
@@ -63,7 +64,7 @@ nav{
     padding-top: 10px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 0%;
+    padding-bottom: 7%;
 }
 
 .contengutIndex {
