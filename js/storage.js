@@ -17,15 +17,14 @@ async function carregarTasquesDesDeArxiu(nomArxiu) {
         let categoriesGuardades = JSON.parse(localStorage.getItem('categories')) || [];
 
         tasquesJSON.forEach(tascaNova => {
-            // 1. Verificar si la categoria ja existeix
-            const categoriaNova = tascaNova.categoria; // { nom: "Organització", color: "#f7df1e" }
+
+            const categoriaNova = tascaNova.categoria; 
             const jaExisteixCategoria = categoriesGuardades.some(categoriaGuardada => categoriaGuardada.nom === categoriaNova.nom);
 
             if (!jaExisteixCategoria) {
                 categoriesGuardades.push(categoriaNova);
             }
 
-            // 2. Verificar si la tasca ja existeix
             const jaExisteixTasca = tasquesGuardades.some(tascaGuardada => tascaGuardada.titol === tascaNova.titol);
 
             if (!jaExisteixTasca) {
@@ -33,19 +32,18 @@ async function carregarTasquesDesDeArxiu(nomArxiu) {
                     titol: tascaNova.titol,
                     descripcio: tascaNova.descripcio,
                     data: tascaNova.data,
-                    categoria: categoriaNova.nom,   // Ara guardam només el nom aquí per ser consistents
+                    categoria: categoriaNova.nom,  
                     prioritat: tascaNova.prioritat
                 });
             }
         });
 
-        // 3. Guardar actualitzacions
         localStorage.setItem('tasques', JSON.stringify(tasquesGuardades));
         localStorage.setItem('categories', JSON.stringify(categoriesGuardades));
 
         console.log('Tasques i categories carregades correctament');
 
-        pintarTasquesPendents(); // Si vols, crides directament després
+        pintarTasquesPendents();
 
     } catch (error) {
         console.error('Error carregant tasques:', error);
