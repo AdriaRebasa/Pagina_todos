@@ -1,6 +1,7 @@
 document.getElementById('carregar-arxiu').addEventListener('click', () => {
     const nomArxiu = document.getElementById('input-nom-arxiu').value.trim();
     carregarTasquesDesDeArxiu(nomArxiu);
+    pintarTasquesPendents();
 });
 
 
@@ -43,7 +44,7 @@ async function carregarTasquesDesDeArxiu(nomArxiu) {
 
         console.log('Tasques i categories carregades correctament');
 
-        pintarTasquesPendents();
+
 
     } catch (error) {
         console.error('Error carregant tasques:', error);
