@@ -1,6 +1,21 @@
 function pintarTasques() {
     pendentsContainer.innerHTML = '';
 
+    const ordrePrioritat = {
+        'Alta': 1,
+        'Mitjana': 2,
+        'Baixa': 3
+    };
+
+    tasques.sort((a, b) => {
+        const prioA = ordrePrioritat[a.prioritat];
+        const prioB = ordrePrioritat[b.prioritat];
+        if (prioA !== prioB) {
+            return prioA - prioB;
+        }
+        return new Date(a.data) - new Date(b.data);
+    });
+
     categories.forEach(categoria => {
         const style = document.createElement('style');
         style.textContent = `
@@ -78,6 +93,21 @@ document.addEventListener('DOMContentLoaded', function () {
     function pintarTasques() {
         pendentsContainer.innerHTML = '';
     
+        const ordrePrioritat = {
+            'Alta': 1,
+            'Mitjana': 2,
+            'Baixa': 3
+        };
+    
+        tasques.sort((a, b) => {
+            const prioA = ordrePrioritat[a.prioritat];
+            const prioB = ordrePrioritat[b.prioritat];
+            if (prioA !== prioB) {
+                return prioA - prioB;
+            }
+            return new Date(a.data) - new Date(b.data);
+        });
+
         categories.forEach(categoria => {
             const style = document.createElement('style');
             style.textContent = `
@@ -148,6 +178,21 @@ document.addEventListener('DOMContentLoaded', function () {
     function pintarTasquesAcabades() {
         acabadesContainer.innerHTML = '';
     
+        const ordrePrioritat = {
+            'Alta': 1,
+            'Mitjana': 2,
+            'Baixa': 3
+        };
+    
+        tasquesAcabades.sort((a, b) => {
+            const prioA = ordrePrioritat[a.prioritat];
+            const prioB = ordrePrioritat[b.prioritat];
+            if (prioA !== prioB) {
+                return prioA - prioB;
+            }
+            return new Date(a.data) - new Date(b.data);
+        });
+
         categories.forEach(categoria => {
             const style = document.createElement('style');
             style.textContent = `
@@ -161,8 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tasquesAcabades.forEach((tasca, index) => {
             const divAcabada = document.createElement('div');
             divAcabada.classList.add('tasca', 'acabada');
-    
-            // Titol + Prioritat
+
             const divTitol = document.createElement('div');
             divTitol.classList.add('titol');
     
@@ -245,16 +289,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function completarTasca(index) {
         const tasca = tasques[index];
-    
-        // Afegir la tasca a l'array de tasques acabades
+
         tasquesAcabades.push(tasca);
         localStorage.setItem('tasques-acabades', JSON.stringify(tasquesAcabades));
-    
-        // Eliminar la tasca de l'array de pendents
+
         tasques.splice(index, 1);
         localStorage.setItem('tasques', JSON.stringify(tasques));
-    
-        // Repintar tant les pendents com les acabades
+
         pintarTasques();
         pintarTasquesAcabades();
         pintarGraficaTasques();
